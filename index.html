@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECONVEXA – Jornal Digital de Cultura e Comunicação do Recôncavo Baiano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --roxo: #7B2FBE;
+      --roxo-escuro: #4A1480;
+      --laranja: #E8601A;
+      --laranja-claro: #F59340;
+      --azul-escuro: #1B2A4A;
+      --branco: #FDFCFF;
+      --cinza-claro: #F4F2F8;
+      --cinza-texto: #444;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background-color: var(--branco);
+      color: var(--azul-escuro);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOPO ── */
+    .topo-institucional {
+      background-color: var(--roxo-escuro);
+      color: var(--branco);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.75rem;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--roxo-escuro) 0%, var(--roxo) 60%, var(--laranja) 100%);
+      padding: 28px 24px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .logo-reconvexa {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--branco);
+      text-transform: uppercase;
+      line-height: 1;
+      position: relative;
+    }
+    .logo-reconvexa span {
+      color: var(--laranja-claro);
+    }
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      color: rgba(253,252,255,0.85);
+      margin-top: 6px;
+      letter-spacing: 0.03em;
+    }
+    .header-data {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.72rem;
+      color: rgba(253,252,255,0.6);
+      margin-top: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background-color: var(--azul-escuro);
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    nav ul {
+      display: inline-flex;
+      list-style: none;
+      padding: 0 12px;
+    }
+    nav ul li a {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(253,252,255,0.75);
+      padding: 12px 14px;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    nav ul li a:hover,
+    nav ul li a.ativo {
+      color: var(--laranja-claro);
+      border-bottom-color: var(--laranja-claro);
+    }
+
+    /* ── DESTAQUE PRINCIPAL ── */
+    .destaque-principal {
+      background: var(--roxo-escuro);
+      color: var(--branco);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+    }
+    .destaque-imagem {
+      background: linear-gradient(160deg, #2d1060 0%, #7B2FBE 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7rem;
+      opacity: 0.9;
+    }
+    .destaque-conteudo {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .destaque-editoria {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--laranja-claro);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .destaque-editoria::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--laranja-claro);
+    }
+    .destaque-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .destaque-resumo {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(253,252,255,0.8);
+      margin-bottom: 24px;
+    }
+    .btn-leia-mais {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--branco);
+      background: var(--laranja);
+      padding: 10px 22px;
+      border-radius: 2px;
+      width: fit-content;
+      transition: background 0.2s;
+    }
+    .btn-leia-mais:hover { background: var(--laranja-claro); }
+
+    /* ── GRADE DE NOTÍCIAS ── */
+    .secao {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+    .secao-titulo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--roxo);
+      margin-bottom: 6px;
+    }
+    .secao-cabecalho {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      color: var(--azul-escuro);
+      padding-bottom: 16px;
+      border-bottom: 3px solid var(--roxo);
+      margin-bottom: 32px;
+    }
+    .grade-noticias {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .card-noticia {
+      background: var(--branco);
+      border: 1px solid #e8e4f0;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card-noticia:hover {
+      box-shadow: 0 8px 32px rgba(74,20,128,0.13);
+      transform: translateY(-3px);
+    }
+    .card-imagem {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      background: linear-gradient(135deg, var(--cinza-claro), #e0d8f0);
+    }
+    .card-corpo {
+      padding: 20px;
+    }
+    .card-editoria {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--roxo);
+      margin-bottom: 8px;
+    }
+    .card-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--azul-escuro);
+      margin-bottom: 10px;
+    }
+    .card-resumo {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--cinza-texto);
+      margin-bottom: 14px;
+    }
+    .card-meta {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.72rem;
+      color: #999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #f0eaf8;
+      padding-top: 12px;
+    }
+    .card-meta a {
+      color: var(--laranja);
+      font-weight: 600;
+    }
+    .card-meta a:hover { text-decoration: underline; }
+
+    /* ── FAIXA ESPECIAL COMÉRCIO ── */
+    .faixa-comercio {
+      background: linear-gradient(135deg, var(--laranja) 0%, var(--laranja-claro) 100%);
+      padding: 48px 24px;
+    }
+    .faixa-comercio .secao {
+      padding: 0;
+    }
+    .faixa-comercio .secao-cabecalho {
+      color: var(--branco);
+      border-bottom-color: rgba(255,255,255,0.5);
+    }
+    .faixa-comercio .secao-titulo {
+      color: rgba(255,255,255,0.8);
+    }
+    .grade-comercio {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .card-comercio {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 4px;
+      padding: 20px;
+      color: var(--branco);
+      backdrop-filter: blur(4px);
+      transition: background 0.2s;
+    }
+    .card-comercio:hover { background: rgba(255,255,255,0.25); }
+    .card-comercio .emoji { font-size: 2rem; margin-bottom: 10px; }
+    .card-comercio h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .card-comercio p {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    .tag-preco {
+      display: inline-block;
+      background: var(--azul-escuro);
+      color: var(--branco);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-top: 10px;
+    }
+
+    /* ── COLUNA LATERAL + PRINCIPAL ── */
+    .layout-lateral {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+    }
+    .lateral-bloco {
+      background: var(--cinza-claro);
+      border-radius: 4px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    .lateral-bloco h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--roxo);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--roxo);
+    }
+    .noticia-breve {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #e0daea;
+    }
+    .noticia-breve:last-child { border-bottom: none; }
+    .noticia-breve-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #d0c8e4;
+      line-height: 1;
+      min-width: 28px;
+    }
+    .noticia-breve-texto {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--azul-escuro);
+      font-family: 'Source Serif 4', serif;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--azul-escuro);
+      color: rgba(253,252,255,0.7);
+      padding: 48px 24px 24px;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+    .footer-logo {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--laranja-claro); }
+    .footer-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      font-family: 'Barlow', sans-serif;
+    }
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--laranja-claro);
+      margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.85rem;
+      padding: 4px 0;
+    }
+    .footer-col ul li a:hover { color: var(--laranja-claro); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom span { color: var(--laranja-claro); }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 1024px) {
+      .destaque-principal { grid-template-columns: 1fr; }
+      .destaque-imagem { min-height: 200px; }
+      .grade-noticias { grid-template-columns: repeat(2, 1fr); }
+      .grade-comercio { grid-template-columns: repeat(2, 1fr); }
+      .layout-lateral { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      .grade-noticias { grid-template-columns: 1fr; }
+      .grade-comercio { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .topo-institucional { font-size: 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPO -->
+  <div class="topo-institucional">
+    <span>Santo Antônio de Jesus, Bahia · Recôncavo Baiano</span>
+    <span id="data-topo"></span>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-reconvexa">RE<span>CON</span>VEXA</div>
+    <div class="tagline">Jornal Digital de Cultura e Comunicação do Recôncavo Baiano</div>
+    <div class="header-data">Edição Digital · IFBA/SAJ · Produção Multimídia</div>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#" class="ativo">Início</a></li>
+      <li><a href="#">Cultura & Identidade</a></li>
+      <li><a href="#">Comércio & Economia</a></li>
+      <li><a href="#">Festas & Eventos</a></li>
+      <li><a href="#">Gastronomia Regional</a></li>
+      <li><a href="#">História do Recôncavo</a></li>
+      <li><a href="#">Política Local</a></li>
+      <li><a href="#">Recôncavo em Foco</a></li>
+      <li><a href="#">O Comércio Mais Barato da BA</a></li>
+    </ul>
+  </nav>
+
+  <!-- DESTAQUE PRINCIPAL -->
+  <section class="destaque-principal">
+    <div class="destaque-imagem">🎭</div>
+    <div class="destaque-conteudo">
+      <div class="destaque-editoria">Cultura & Identidade</div>
+      <h1 class="destaque-titulo">Festival de Arte e Cultura do Recôncavo celebra a identidade baiana com shows, exposições e rodas de conversa</h1>
+      <p class="destaque-resumo">O maior festival cultural da região reuniu artistas locais, pesquisadores e comunidades em uma semana de celebração da identidade afro-baiana. Manifestações como o candomblé, a capoeira e o samba de roda ganharam destaque nas programações.</p>
+      <a href="#" class="btn-leia-mais">Leia a matéria completa →</a>
+    </div>
+  </section>
+
+  <!-- ÚLTIMAS NOTÍCIAS -->
+  <section class="secao">
+    <div class="secao-titulo">Últimas Notícias</div>
+    <h2 class="secao-cabecalho">Recôncavo em Foco</h2>
+    <div class="grade-noticias">
+
+      <article class="card-noticia">
+        <div class="card-imagem">🍲</div>
+        <div class="card-corpo">
+          <div class="card-editoria">Gastronomia Regional</div>
+          <h3 class="card-titulo">Moqueca de peixe do Recôncavo é reconhecida como patrimônio imaterial da Bahia</h3>
+          <p class="card-resumo">A tradicional receita, passada de geração em geração entre famílias de pescadores do São Francisco, recebeu o título em cerimônia realizada em Salvador.</p>
+          <div class="card-meta">
+            <span>12 mai. 2026</span>
+            <a href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-noticia">
+        <div class="card-imagem">🎶</div>
+        <div class="card-corpo">
+          <div class="card-editoria">Festas & Eventos</div>
+          <h3 class="card-titulo">São João do Recôncavo 2026 promete novidades com palcos em três municípios</h3>
+          <p class="card-resumo">Santo Antônio de Jesus, Cruz das Almas e Cachoeira unem esforços para o maior São João intermunicipal da história, com artistas regionais e nacionais.</p>
+          <div class="card-meta">
+            <span>10 mai. 2026</span>
+            <a href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-noticia">
+        <div class="card-imagem">🏛️</div>
+        <div class="card-corpo">
+          <div class="card-editoria">História do Recôncavo</div>
+          <h3 class="card-titulo">Museu do Recôncavo lança exposição sobre a rota do ouro e do cacau no século XVIII</h3>
+          <p class="card-resumo">Documentos históricos e artefatos arqueológicos revelam a importância da região como centro econômico e cultural durante o período colonial brasileiro.</p>
+          <div class="card-meta">
+            <span>8 mai. 2026</span>
+            <a href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-noticia">
+        <div class="card-imagem">🌱</div>
+        <div class="card-corpo">
+          <div class="card-editoria">Comércio & Economia</div>
+          <h3 class="card-titulo">Agricultura familiar cresce 18% no Recôncavo e gera mais de 2 mil empregos</h3>
+          <p class="card-resumo">Dados da Secretaria de Agricultura apontam expansão significativa da produção de mandioca, frutas tropicais e hortaliças nos municípios da região.</p>
+          <div class="card-meta">
+            <span>7 mai. 2026</span>
+            <a href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-noticia">
+        <div class="card-imagem">📚</div>
+        <div class="card-corpo">
+          <div class="card-editoria">Cultura & Identidade</div>
+          <h3 class="card-titulo">UFRB lança programa de bolsas para pesquisadores da cultura afro-baiana</h3>
+          <p class="card-resumo">A universidade abre 30 vagas para estudantes de graduação e pós-graduação interessados em documentar tradições culturais das comunidades quilombolas do Recôncavo.</p>
+          <div class="card-meta">
+            <span>6 mai. 2026</span>
+            <a href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-noticia">
+        <div class="card-imagem">🗳️</div>
+        <div class="card-corpo">
+          <div class="card-editoria">Política Local</div>
+          <h3 class="card-titulo">Câmara Municipal aprova lei de incentivo à cultura popular em SAJ</h3>
+          <p class="card-resumo">A legislação prevê isenção fiscal para produtores culturais locais e criação de fundo municipal de fomento às artes, com previsão de R$ 500 mil anuais.</p>
+          <div class="card-meta">
+            <span>5 mai. 2026</span>
+            <a href="#">Ler mais →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FAIXA ESPECIAL: COMÉRCIO MAIS BARATO -->
+  <div class="faixa-comercio">
+    <div class="secao" style="max-width:1200px;margin:0 auto;">
+      <div class="secao-titulo" style="color:rgba(255,255,255,0.8);">Editoria Especial</div>
+      <h2 class="secao-cabecalho" style="color:var(--branco);border-bottom-color:rgba(255,255,255,0.4);">O Comércio Mais Barato da BA</h2>
+      <div class="grade-comercio">
+        <div class="card-comercio">
+          <div class="emoji">🛒</div>
+          <h3>Feira Central de SAJ</h3>
+          <p>Os melhores preços em frutas, legumes e artesanato do Recôncavo. Funciona às terças, quintas e sábados.</p>
+          <span class="tag-preco">Economia garantida</span>
+        </div>
+        <div class="card-comercio">
+          <div class="emoji">👗</div>
+          <h3>Centro Comercial de Cruz das Almas</h3>
+          <p>Roupas, calçados e acessórios com preços até 40% menores que Salvador. Variedade e qualidade no coração do Recôncavo.</p>
+          <span class="tag-preco">Até 40% mais barato</span>
+        </div>
+        <div class="card-comercio">
+          <div class="emoji">🔧</div>
+          <h3>Material de Construção em Cachoeira</h3>
+          <p>Fornecedores locais oferecem material de qualidade com fret
