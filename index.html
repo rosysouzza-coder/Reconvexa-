@@ -28,9 +28,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--cinza-claro);
   color: var(--cinza-texto);
@@ -39,17 +37,11 @@ body {
   font-size: 16px;
 }
 
-/* ─── TOPO BANDEIRA ─── */
-.faixa-bandeira {
-  display: flex;
-  height: 5px;
-  width: 100%;
-}
+.faixa-bandeira { display: flex; height: 5px; width: 100%; }
 .faixa-bandeira span:nth-child(1) { background: var(--vermelho); flex: 1; }
 .faixa-bandeira span:nth-child(2) { background: var(--amarelo); flex: 1; }
 .faixa-bandeira span:nth-child(3) { background: var(--azul); flex: 1; }
 
-/* ─── HEADER / CABEÇALHO ─── */
 header {
   background: var(--branco);
   border-bottom: 1px solid var(--borda);
@@ -70,7 +62,6 @@ header {
   height: 80px;
 }
 
-/* ─── LOGO SVG ─── */
 .logo-area {
   display: flex;
   align-items: center;
@@ -79,10 +70,7 @@ header {
   flex-shrink: 0;
 }
 
-.logo-svg {
-  width: 62px;
-  height: 62px;
-}
+.logo-svg { width: 62px; height: 62px; }
 
 .logo-texto {
   display: flex;
@@ -127,12 +115,7 @@ header {
   margin: 0 4px;
 }
 
-/* ─── NAV ─── */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+nav { display: flex; align-items: center; gap: 4px; }
 
 nav a {
   font-family: var(--fonte-logo);
@@ -148,10 +131,7 @@ nav a {
   white-space: nowrap;
 }
 
-nav a:hover {
-  background: var(--azul);
-  color: var(--amarelo);
-}
+nav a:hover { background: var(--azul); color: var(--amarelo); }
 
 .hamburger {
   display: none;
@@ -171,13 +151,7 @@ nav a:hover {
   transition: transform 0.3s;
 }
 
-/* ─── MOBILE NAV ─── */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  background: var(--azul-escuro);
-  padding: 16px 24px;
-}
+.mobile-nav { display: none; flex-direction: column; background: var(--azul-escuro); padding: 16px 24px; }
 .mobile-nav.open { display: flex; }
 .mobile-nav a {
   font-family: var(--fonte-logo);
@@ -190,7 +164,6 @@ nav a:hover {
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* ─── DATA / EDIÇÃO ─── */
 .data-bar {
   background: var(--azul-escuro);
   color: rgba(255,255,255,0.65);
@@ -202,17 +175,9 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 100%;
 }
 
-/* ─── HERO / DESTAQUE PRINCIPAL ─── */
-.hero {
-  background: var(--azul-escuro);
-  color: var(--branco);
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-}
+.hero { background: var(--azul-escuro); color: var(--branco); overflow: hidden; }
 
 .hero-inner {
   max-width: 1200px;
@@ -227,8 +192,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
-  z-index: 2;
+  animation: fade-in-up 0.7s ease both;
 }
 
 .hero-editoria {
@@ -261,10 +225,7 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
-.hero-titulo em {
-  color: var(--amarelo);
-  font-style: italic;
-}
+.hero-titulo em { color: var(--amarelo); font-style: italic; }
 
 .hero-resumo {
   font-family: var(--fonte-corpo);
@@ -284,47 +245,21 @@ nav a:hover {
 }
 
 .hero-imagem {
-  position: relative;
-  overflow: hidden;
   background: linear-gradient(135deg, var(--azul) 0%, #0a1d3a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-imagem-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
+.hero-svg-art { width: 80%; max-width: 340px; opacity: 0.85; }
 
-/* Mapa do recôncavo estilizado em SVG como placeholder */
-.hero-svg-art {
-  width: 80%;
-  max-width: 340px;
-  opacity: 0.85;
-}
-
-/* ─── FAIXA BANDEIRA DIVISÓRIA ─── */
-.faixa-divisoria {
-  display: flex;
-  height: 4px;
-}
+.faixa-divisoria { display: flex; height: 4px; }
 .faixa-divisoria span:nth-child(1) { background: var(--vermelho); flex: 1; }
 .faixa-divisoria span:nth-child(2) { background: var(--amarelo); flex: 1; }
 .faixa-divisoria span:nth-child(3) { background: var(--azul); flex: 1; }
 
-/* ─── MAIN CONTENT ─── */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 24px;
-}
+main { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
 
-/* ─── SEÇÃO TÍTULO ─── */
 .secao-titulo {
   display: flex;
   align-items: center;
@@ -343,20 +278,9 @@ main {
   color: var(--azul-escuro);
 }
 
-.secao-titulo-linha {
-  flex: 1;
-  height: 1px;
-  background: var(--borda);
-}
+.secao-titulo-linha { flex: 1; height: 1px; background: var(--borda); }
+.secao-titulo-icone { width: 6px; height: 6px; background: var(--vermelho); transform: rotate(45deg); }
 
-.secao-titulo-icone {
-  width: 6px;
-  height: 6px;
-  background: var(--vermelho);
-  transform: rotate(45deg);
-}
-
-/* ─── GRID DE MATÉRIAS ─── */
 .grid-principal {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -364,10 +288,6 @@ main {
   margin-bottom: 56px;
 }
 
-.coluna-principal { }
-.coluna-lateral { }
-
-/* ─── CARD DESTAQUE ─── */
 .card-destaque {
   background: var(--branco);
   border: 1px solid var(--borda);
@@ -378,28 +298,16 @@ main {
   cursor: pointer;
 }
 
-.card-destaque:hover {
-  box-shadow: 0 8px 32px rgba(0,61,165,0.12);
-}
+.card-destaque:hover { box-shadow: 0 8px 32px rgba(0,61,165,0.12); }
 
 .card-destaque .img-placeholder {
   width: 100%;
-  height: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--fonte-logo);
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-  position: relative;
-  overflow: hidden;
 }
 
-.card-destaque .card-body {
-  padding: 24px;
-}
+.card-destaque .card-body { padding: 24px; }
 
 .card-tag {
   display: inline-block;
@@ -420,7 +328,6 @@ main {
 .tag-festas { background: var(--vermelho); color: var(--amarelo); }
 .tag-politica { background: #333; color: var(--amarelo); }
 .tag-foco { background: var(--azul); color: var(--branco); }
-.tag-editorial { background: var(--laranja); color: var(--branco); }
 
 .card-destaque h3 {
   font-family: var(--fonte-titulo);
@@ -431,10 +338,7 @@ main {
   margin-bottom: 12px;
 }
 
-.card-destaque h3 em {
-  font-style: italic;
-  color: var(--vermelho);
-}
+.card-destaque h3 em { font-style: italic; color: var(--vermelho); }
 
 .card-destaque p {
   font-family: var(--fonte-corpo);
@@ -455,15 +359,8 @@ main {
   gap: 12px;
 }
 
-.card-meta::before {
-  content: '';
-  display: block;
-  width: 16px;
-  height: 1px;
-  background: var(--vermelho);
-}
+.card-meta::before { content: ''; display: block; width: 16px; height: 1px; background: var(--vermelho); }
 
-/* ─── CARDS PEQUENOS ─── */
 .card-pequeno {
   display: flex;
   gap: 14px;
@@ -481,10 +378,6 @@ main {
   height: 68px;
   flex-shrink: 0;
   border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
 }
 
 .card-pequeno-body { flex: 1; }
@@ -507,7 +400,6 @@ main {
   text-transform: uppercase;
 }
 
-/* ─── SIDEBAR ─── */
 .sidebar-widget {
   background: var(--branco);
   border: 1px solid var(--borda);
@@ -556,7 +448,6 @@ main {
   text-transform: uppercase;
 }
 
-/* ─── FRASE DO RECÔNCAVO ─── */
 .frase-reconvavo {
   background: var(--azul-escuro);
   color: var(--branco);
@@ -564,7 +455,6 @@ main {
   padding: 48px 24px;
   margin: 40px 0;
   position: relative;
-  overflow: hidden;
 }
 
 .frase-reconvavo::before {
@@ -594,7 +484,6 @@ main {
   color: rgba(255,255,255,0.5);
 }
 
-/* ─── GRADE EDITORIAS ─── */
 .grade-editorias {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -625,11 +514,7 @@ main {
 
 .editoria-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,0.1); }
 .editoria-card:hover::after { transform: scaleX(1); }
-
-.editoria-icone {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
+.editoria-icone { font-size: 1.6rem; margin-bottom: 10px; }
 
 .editoria-card h3 {
   font-family: var(--fonte-logo);
@@ -641,7 +526,6 @@ main {
   line-height: 1.3;
 }
 
-/* ─── EDITORIAL ESPECIAL ─── */
 .editorial-especial {
   background: linear-gradient(135deg, var(--vermelho) 0%, #8B0000 100%);
   color: var(--branco);
@@ -659,13 +543,11 @@ main {
 .editorial-especial::before {
   content: 'O COMÉRCIO MAIS BARATO DA BA';
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--fonte-logo);
   font-size: 5rem;
   font-weight: 900;
-  letter-spacing: 0.05em;
   color: rgba(255,255,255,0.04);
   white-space: nowrap;
   pointer-events: none;
@@ -707,7 +589,6 @@ main {
   justify-content: center;
 }
 
-/* ─── GRID BAIXO ─── */
 .grid-baixo {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -731,16 +612,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--fonte-logo);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  color: rgba(255,255,255,0.45);
-  text-transform: uppercase;
 }
 
-.card-medio-body {
-  padding: 18px;
-}
+.card-medio-body { padding: 18px; }
 
 .card-medio h3 {
   font-family: var(--fonte-titulo);
@@ -758,17 +632,8 @@ main {
   line-height: 1.65;
 }
 
-/* ─── FOOTER ─── */
-footer {
-  background: var(--azul-escuro);
-  color: rgba(255,255,255,0.65);
-  padding: 48px 24px 24px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+footer { background: var(--azul-escuro); color: rgba(255,255,255,0.65); padding: 48px 24px 24px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
 
 .footer-topo {
   display: grid;
@@ -779,27 +644,9 @@ footer {
   margin-bottom: 28px;
 }
 
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.footer-logo-nome {
-  font-family: var(--fonte-logo);
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--amarelo);
-  letter-spacing: 0.04em;
-}
-
-.footer-desc {
-  font-family: var(--fonte-corpo);
-  font-size: 0.85rem;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.5);
-}
+.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.footer-logo-nome { font-family: var(--fonte-logo); font-weight: 700; font-size: 1.5rem; color: var(--amarelo); letter-spacing: 0.04em; }
+.footer-desc { font-family: var(--fonte-corpo); font-size: 0.85rem; line-height: 1.65; color: rgba(255,255,255,0.5); }
 
 .footer-col h4 {
   font-family: var(--fonte-logo);
@@ -813,89 +660,17 @@ footer {
 
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 8px; }
-.footer-col a {
-  font-family: var(--fonte-meta);
-  font-size: 0.83rem;
-  color: rgba(255,255,255,0.55);
-  text-decoration: none;
-  transition: color 0.2s;
-}
+.footer-col a { font-family: var(--fonte-meta); font-size: 0.83rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
 .footer-col a:hover { color: var(--amarelo); }
 
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-copy { font-family: var(--fonte-meta); font-size: 0.72rem; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; }
 
-.footer-copy {
-  font-family: var(--fonte-meta);
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 0.06em;
-}
-
-.footer-faixa {
-  display: flex;
-  height: 3px;
-  margin-top: 28px;
-}
+.footer-faixa { display: flex; height: 3px; margin-top: 28px; }
 .footer-faixa span:nth-child(1) { background: var(--vermelho); flex: 1; }
 .footer-faixa span:nth-child(2) { background: var(--amarelo); flex: 1; }
 .footer-faixa span:nth-child(3) { background: var(--azul); flex: 1; }
 
-/* ─── PANDEIRO SVG ANIMADO ─── */
-@keyframes rotate-lento {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero-content { animation: fade-in-up 0.7s ease both; }
-
-/* ─── RESPONSIVE TABLET ≤1024 ─── */
-@media (max-width: 1024px) {
-  .grid-principal { grid-template-columns: 1fr; gap: 32px; }
-  .coluna-lateral { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .grade-editorias { grid-template-columns: repeat(4, 1fr); }
-  .grid-baixo { grid-template-columns: 1fr 1fr; }
-  .footer-topo { grid-template-columns: 1fr 1fr; }
-  .editorial-especial { grid-template-columns: 1fr; }
-  .editorial-especial-visual { display: none; }
-
-  nav { display: none; }
-  .hamburger { display: flex; }
-}
-
-/* ─── RESPONSIVE MOBILE ≤680 ─── */
-@media (max-width: 680px) {
-  .header-inner { height: 64px; }
-  .logo-nome { font-size: 1.5rem; }
-  .logo-sub { display: none; }
-
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-imagem { display: none; }
-  .hero-content { padding: 36px 20px; }
-
-  .grade-editorias { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .grid-baixo { grid-template-columns: 1fr; }
-  .footer-topo { grid-template-columns: 1fr; }
-
-  .editorial-especial { padding: 32px 20px; }
-
-  main { padding: 28px 16px; }
-  .frase-reconvavo { padding: 36px 20px; }
-
-  .data-bar { font-size: 0.62rem; }
-}
-
-/* ─── IMAGENS PLACEHOLDER COLORIDAS ─── */
 .img-cultura { background: linear-gradient(135deg, #003DA5 0%, #1B2A4A 100%); }
 .img-comercio { background: linear-gradient(135deg, #C8102E 0%, #8B0000 100%); }
 .img-gastronomia { background: linear-gradient(135deg, #E8601A 0%, #C8102E 100%); }
@@ -912,19 +687,87 @@ footer {
   text-align: center;
   padding: 8px;
 }
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .grid-principal { grid-template-columns: 1fr; gap: 32px; }
+  .coluna-lateral { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grade-editorias { grid-template-columns: repeat(4, 1fr); }
+  .grid-baixo { grid-template-columns: 1fr 1fr; }
+  .footer-topo { grid-template-columns: 1fr 1fr; }
+  .editorial-especial { grid-template-columns: 1fr; }
+  .editorial-especial-visual { display: none; }
+  nav { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (max-width: 680px) {
+  .header-inner { height: 64px; }
+  .logo-nome { font-size: 1.5rem; }
+  .logo-sub { display: none; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-imagem { display: none; }
+  .hero-content { padding: 36px 20px; }
+  .grade-editorias { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .grid-baixo { grid-template-columns: 1fr; }
+  .footer-topo { grid-template-columns: 1fr; }
+  .editorial-especial { padding: 32px 20px; }
+  main { padding: 28px 16px; }
+  .frase-reconvavo { padding: 36px 20px; }
+  .data-bar { font-size: 0.62rem; }
+}
 </style>
 </head>
 <body>
 
-<!-- FAIXA BANDEIRA -->
-<div class="faixa-bandeira">
-  <span></span><span></span><span></span>
-</div>
+<div class="faixa-bandeira"><span></span><span></span><span></span></div>
 
-<!-- DATA BAR -->
 <div class="data-bar">
   <span>Santo Antônio de Jesus, Bahia · Recôncavo Baiano</span>
   <span>Jornal Cultural Digital · Edição 2026</span>
 </div>
 
-<!-- HEA
+<header>
+  <div class="header-inner">
+
+    <a href="#" class="logo-area">
+      <svg class="logo-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="40" cy="40" r="38" stroke="url(#grad-aro)" stroke-width="10" fill="none"/>
+        <circle cx="40" cy="2" r="4" fill="#FFCF01"/>
+        <circle cx="40" cy="78" r="4" fill="#FFCF01"/>
+        <circle cx="2" cy="40" r="4" fill="#FFCF01"/>
+        <circle cx="78" cy="40" r="4" fill="#FFCF01"/>
+        <circle cx="14" cy="14" r="4" fill="#FFCF01"/>
+        <circle cx="66" cy="14" r="4" fill="#FFCF01"/>
+        <circle cx="14" cy="66" r="4" fill="#FFCF01"/>
+        <circle cx="66" cy="66" r="4" fill="#FFCF01"/>
+        <circle cx="40" cy="40" r="28" fill="white"/>
+        <path d="M20 36 Q27 31 34 36 Q41 41 48 36 Q55 31 62 36" stroke="#003DA5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M20 40 Q27 35 34 40 Q41 45 48 40 Q55 35 62 40" stroke="#C8102E" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M20 44 Q27 39 34 44 Q41 49 48 44 Q55 39 62 44" stroke="#8B9EC0" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <defs>
+          <linearGradient id="grad-aro" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#C8102E"/>
+            <stop offset="50%" stop-color="#7B2FBE"/>
+            <stop offset="100%" stop-color="#003DA5"/>
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <div class="divisor-logo"></div>
+
+      <div class="logo-texto">
+        <span class="logo-nome">RECONVEX<span class="letra-a">Á</span></span>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <span class="logo-sub">Jornal Cultural Digital</span>
+          <span class="logo-sub-italic">do Recôncavo Baiano</span>
+        </div>
+      </div>
+    </a>
+
+    <nav>
+      <a href="#cultura">Cultu
